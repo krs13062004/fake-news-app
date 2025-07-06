@@ -3,10 +3,14 @@ from transformers import pipeline
 #from lime.lime_text import LimeTextExplainer
 import numpy as np
 import re
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-# Load model (change to your own local model if needed)
-model_name = "./fake_news_model"
-classifier = pipeline("text-classification", model=model_name, return_all_scores=True)
+model = AutoModelForSequenceClassification.from_pretrained("./fake_news_model")
+tokenizer = AutoTokenizer.from_pretrained("./fake_news_model")
+
+model.push_to_hub("rs2004/fake-news-bert")
+tokenizer.push_to_hub("rs2004/fake-news-bert")
+
 
 # Class label mapping
 label_map = {
