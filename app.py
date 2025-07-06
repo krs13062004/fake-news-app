@@ -5,8 +5,8 @@ import numpy as np
 import re
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-model = AutoModelForSequenceClassification.from_pretrained("./fake_news_model")
-tokenizer = AutoTokenizer.from_pretrained("./fake_news_model")
+model = AutoModelForSequenceClassification.from_pretrained("rs2004/fake-news-bert")
+tokenizer = AutoTokenizer.from_pretrained("rs2004/fake-news-bert")
 
 model.push_to_hub("rs2004/fake-news-bert")
 tokenizer.push_to_hub("rs2004/fake-news-bert")
