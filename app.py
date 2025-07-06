@@ -1,6 +1,6 @@
 import streamlit as st
 from transformers import pipeline
-from lime.lime_text import LimeTextExplainer
+#from lime.lime_text import LimeTextExplainer
 import numpy as np
 import re
 
